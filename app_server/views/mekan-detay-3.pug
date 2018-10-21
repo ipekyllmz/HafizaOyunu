@@ -1,0 +1,81 @@
+extends layout
+block content
+  .row.page-header
+    .col-lg-12
+      //Mekanın adı
+      h1 Sarımsak
+  .row
+    //Responsive yap
+    .col-xs-12.col-md-12
+      .row
+        .col-xs-12.col-sm-6
+          //Yıldızları ekle
+          p.rating
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            span.glyphicon.glyphicon-star-empty
+            span.glyphicon.glyphicon-star-empty
+          //Mekanın adresi
+          p Merkez Camii Yanı
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Açılış Saatleri
+            .panel-body
+                p
+                  | Pazartesi-Cuma: 7:00-04:00
+                p
+                  | Cumartesi: 8:00-03:00
+                p
+                  | Pazar: Açık
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Neler Var
+            .panel-body
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; Çay
+                | &nbsp;
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; Canlı Müzik
+                | &nbsp;
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; Eğlence
+                | &nbsp;
+        //Haritayı ekleme işlemi
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Konum Bilgisi
+            .panel-body
+              //Harita eklemek için Google'dan API anahtarı almanız gerekiyor. key kısmından sonra yer alan kısım API KEY.
+              -var enlem=37.781406
+              -var boylam=30.565119
+              img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center='+enlem+','+boylam+'&zoom=12&size=600x400&markers='+enlem+','+boylam+'&key=AIzaSyCmmKygTpBzHGOZEciJpAdxC9v_tWHagnE')
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              //Yorum ekle düğmesini ekle
+              a.btn.btn-default.pull-right(href='/mekan/yorum/yeni') Yorum Ekle
+              h2.panel-title Müşteri Yorumları
+            .panel-body.review-container
+                .row
+                 .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-empty
+                      span.glyphicon.glyphicon-empty
+                      span.glyphicon.glyphicon-empty
+                      span.glyphicon.glyphicon-empty
+                    span.reviewAuthor Nevin İn
+                    small.reviewTimestamp  5 EKim 2018
+                  .col-xs-12
+                    p Şarkı söyleyen çocuklar BERBAAAT ayh İnanamıyoRUUMM..!!!
+
+
+
+                    
